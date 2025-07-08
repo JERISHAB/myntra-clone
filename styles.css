@@ -1,0 +1,222 @@
+@font-face {
+    font-family: 'Assistant';
+    src: url('https://constant.myntassets.com/www/fonts/Assistant-Regular.eot');
+    src: url('https://constant.myntassets.com/www/fonts/Assistant-Regular.eot?#iefix') format('embedded-opentype'), url('https://constant.myntassets.com/www/fonts/Assistant-Regular.woff') format('woff'), url('https://constant.myntassets.com/www/fonts/Assistant-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    src: url('https://constant.myntassets.com/www/fonts/Assistant-Bold.eot');
+    src: url('https://constant.myntassets.com/www/fonts/Assistant-Bold.eot?#iefix') format('embedded-opentype'), url('https://constant.myntassets.com/www/fonts/Assistant-Bold.woff') format('woff'), url('https://constant.myntassets.com/www/fonts/Assistant-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: "Assistant", Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .05);
+}
+
+.logo {
+    background: url(https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png);
+    background-size: 1404px 105px;
+    width: 53px;
+    height: 36px;
+    background-position: -462px 0;
+
+    margin-left: 4%
+}
+
+.nav-links {
+    display: flex;
+        gap: 39px;
+        margin: 0 0 0 4.5%;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.new-label {
+    color: #ff3f6c;
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+.search-bar {
+    flex-grow: 1;
+    margin: 0 30px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px 15px;
+    border: none;
+    background-color: #f5f5f6;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    color: #333;
+}
+
+.Profile-img {
+    background: url(https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png);
+    background-size: 1404px 105px;
+    width: 24px;
+    height: 24px;
+    background-position: -298px -56px;
+    display: inline-block;
+}
+
+.Wishlist-img {
+    background: url(https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png);
+    background-size: 1404px 105px;
+    width: 17px;
+    height: 22px;
+    background-position: -315px -187px;
+    display: inline-block;
+}
+
+.Bag-img {
+    background: url(https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png);
+    background-size: 1404px 105px;
+    width: 22px;
+    height: 22px;
+    background-position: -341px -56px;
+    display: inline-block;
+}
+
+.search-icon{
+    background: url(https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png);
+        background-size: 1404px 105px;
+        width: 21px;
+            height: 21px;
+            background-position: -754px 0;
+}
+
+.search-bar{
+    display: flex;
+    align-items: center;
+    border: none;
+        background-color: #f5f5f6;
+        border-radius: 4px;
+        font-size: 14px;
+        padding: 8px 15px;
+}
+
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 20px;
+}
+
+.product-card {
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+}
+
+.product-info {
+    padding: 12px;
+}
+
+.product-title {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.product-desc {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.price {
+    font-weight: bold;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-left: 8px;
+}
+
+.discount {
+    color: orange;
+    margin-left: 6px;
+    font-size: 14px;
+}
+
+.star-icon{
+    background: url(https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png);
+        background-size: 1404px 105px;
+        display: inline-block;
+        background-position: -171px -28px;
+            width: 24px;
+            height: 24px;
+            transform: scale(.55);
+}
+
+.rating-box {
+    display: flex;
+    align-items: center;
+    background: #f2f2f2;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.rating {
+    color: #000;
+}
+
+.star {
+    width: 14px;
+    height: 14px;
+    margin: 0 5px;
+}
+
+.count {
+    color: #000;
+}
+
