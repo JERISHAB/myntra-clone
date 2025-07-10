@@ -36,6 +36,15 @@ body {
     height: 80px;
     box-sizing: border-box;
     box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .05);
+    width: 100%;
+
+position: fixed;
+top: 0;
+right: 0;
+left: 0;
+z-index: 10;
+background-color: white;
+    
 }
 
 .logo {
@@ -192,7 +201,6 @@ body {
 
 
 .product-grid {
-    width: 100%;
     display: grid;
     grid-template-columns: repeat(5, 211px);
     gap: 20px;
@@ -303,11 +311,14 @@ body {
 .filter-box.categories label .filter-count{
    margin-left: 1px;
 }
+.filter-box.brand label .filter-count{
+   margin-left: 1px;
+}
 
 
 
 .nav-info-section {
-    margin-top: 6px;
+    margin-top: 86px;
     padding: 12px 25px 15px 25px;
     font-family: "Assistant", Arial, sans-serif;
 }
@@ -348,7 +359,7 @@ body {
 /* Main container */
 
 .left-section {
-    width: 251px;
+    width: 304px
 }
 
 .main-container {
@@ -384,7 +395,7 @@ body {
 }
 
 .filter-option {
-    display: flex;
+    display: flex block ;
     align-items: center;
     font-family: "Assistant", Arial, sans-serif;
     font-size: 14px;
@@ -397,11 +408,13 @@ body {
     display: none;
 }
 
-.brand-head-sec {
+.color-head ,.brand-head-sec {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
+
 
 .search-small-icon {
     background: url(https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png);
@@ -420,6 +433,9 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
+            top: -11px;
+            left: -3.5px;
 }
 
 .checkmark {
@@ -455,6 +471,16 @@ body {
     position: relative;
     top: 1px;
 }
+.filter-box.brand label .label-text{
+    position: relative;
+    top: 1px;
+}
+
+.filter-box.brand{
+    padding: 20px 10px 15px 25px;
+}
+
+
 
 
 .search-small {
@@ -466,26 +492,79 @@ body {
     cursor: pointer;
 }
 
+
+
 .show-more {
     color: #e5395f;
     cursor: pointer;
-    font-size: 14px;
-    margin-top: 10px;
+    font-size: 15px;
+    margin-top: 11px;
+    margin-left: 27px;
 }
 
-.price-range-slider {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 8px;
-}
-
-.price-range-slider input[type="range"] {
-    flex: 1;
-}
-
+/* slider styles */
 .range-text {
-    font-size: 14px;
-    margin-top: 8px;
+    font-size: 12px;
+        font-weight: 600;
+        margin-left: 4px;
+}
+
+.slider-wrapper{
+    position: relative;
+    width: 200px;
+    height: 12px;
+    margin-top: 22px;
+    left: 1px;
+}
+
+.range-slider1, .range-slider2{
+    position: absolute;
+    width: 100%;
+    pointer-events: all;
+    appearance: none;
+    background: none;
+    height: 2px;
+    top: 0;
+}
+
+.range-slider1::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 12px;
+    width: 12px;
+    background: rgb(255, 255, 255);
+    border: 4px solid #f8597b;
+        border-radius: 50%;
+        cursor: pointer;
+        margin-top: -8px;
+        z-index: 2;
+        position: relative;
+        top: -1px;
+        left: -10px;
+}
+.range-slider2::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 12px;
+    width: 12px;
+    background: rgb(255, 255, 255);
+    border: 4px solid #f8597b;
+        border-radius: 50%;
+        cursor: pointer;
+        margin-top: -8px;
+        z-index: 2;
+        top: -1px;
+        position: relative;
+        right: -7.5px;
+}
+
+.slider-track {
+    position: absolute;
+    top: -5px;
+    left: -4px;
+    height: 2px;
+    width: 100%;
+    border-radius: 4px;
+    background: linear-gradient(to right, #afacad 0%, #e5395f 0%, #e5395f 100%, #948e8f 100%);
+    z-index: 0;
 }
 
 
