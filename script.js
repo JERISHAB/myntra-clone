@@ -25,6 +25,11 @@ async function fetchProducts() {
                 <span class="original-price">Rs. ${product.originalPrice}</span>
                 <span class="discount">(${product.discountPercentage}% OFF)</span>
               </div>
+              <div class="coupon-box">
+                <span class="price-label">Best Price</span>
+                <span class="price-value">₹649</span>
+                <span class="price-note">with coupon</span>
+              </div>
             </div>
             
           </div>
