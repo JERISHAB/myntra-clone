@@ -16,7 +16,7 @@ async function fetchProducts() {
                 <span class="count">| ${product.noOfRatings}</span>
               </span>
             </div>
-            
+             
             <div class="product-info">
               <div class="product-title">${product.title}</div>
               <div class="product-desc">${product.description}</div>
