@@ -16,7 +16,7 @@ async function fetchProducts() {
                 <span class="count">| ${product.noOfRatings}</span>
               </span>
             </div>
-            
+             
             <div class="product-info">
               <div class="product-title">${product.title}</div>
               <div class="product-desc">${product.description}</div>
@@ -24,6 +24,11 @@ async function fetchProducts() {
                 <span class="price">Rs. ${product.discountPrice}</span>
                 <span class="original-price">Rs. ${product.originalPrice}</span>
                 <span class="discount">(${product.discountPercentage}% OFF)</span>
+              </div>
+              <div class="coupon-box">
+                <span class="price-label">Best Price</span>
+                <span class="price-value">₹649</span>
+                <span class="price-note">with coupon</span>
               </div>
             </div>
             
@@ -38,3 +43,36 @@ async function fetchProducts() {
 }
 
 fetchProducts();
+
+
+// slider funtions
+
+const minRange = document.getElementById("min-range");
+const maxRange = document.getElementById("max-range");
+const track = document.getElementById("slider-track");
+
+let min = parseInt(minRange.value);
+let max = parseInt(maxRange.value);
+
+if (max - min < 100) {
+  if (minRange === document.activeElement) {
+    minRange.value = max - 100;
+    min = max - 100;
+  } else {
+    maxRange.value = min + 100;
+    max = min + 100;
+  }
+}
+
+
+const percentMin = (min / 10100) * 100;
+const percentMax = (max / 10100) * 100;
+
+track.style.background = `
+linear-gradient(to right,
+ #afacad  0%,
+  #afacad  ${percentMin}%,
+  #e5395f ${percentMin}%,
+  #e5395f ${percentMax}%,
+ #afacad  ${percentMax}%,
+ #afacad 100%)`;
