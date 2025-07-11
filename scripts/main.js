@@ -34,6 +34,7 @@ function setupSortEvents() {
 
   const sortOptions = document.querySelectorAll(".sort-option");
   const sortContainer = document.querySelector(".sort-right");
+  const displayText = document.querySelector(".sort-right span strong");
   const sortDropdown = document.querySelector(".sortby-dropdown");
   sortContainer.addEventListener("click", () => {
     sortDropdown.style.display =
@@ -47,6 +48,7 @@ function setupSortEvents() {
         currentSortType = option.getAttribute("data-sort");
   
         renderAndSort(currentFilteredArray);
+        displayText.innerHTML = currentSortType
       });
     });
   })

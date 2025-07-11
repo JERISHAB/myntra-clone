@@ -204,8 +204,8 @@ body {
 .product-grid {
     display: grid;
     grid-template-columns: repeat(5, 210px);
-    gap: 19px;
-    padding: 24px 27px 20px 28px;
+    gap: 22px;
+    padding: 24px 0px 20px 28px;
     /* padding: 24px 20px 20px 21px; */
 }
 
