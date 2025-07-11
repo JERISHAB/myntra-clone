@@ -1,5 +1,8 @@
+import { sortProducts } from "./filters.js";
 import { renderProducts } from "./render.js";
 import { applyFilters } from "./utils.js";
+let currentSortType = null;
+let currentFilteredArray = [];
 
 
 const fetchData = async () => {
@@ -7,12 +10,15 @@ const fetchData = async () => {
     const response = await fetch("./data.json");
     const fetchData = await response.json();
     let originalArray = fetchData.products;
-
-    renderProducts(originalArray);
+    currentFilteredArray = [...originalArray];
+    setupSortEvents();
+    renderProducts(currentFilteredArray);
 
     const checkbox = document.querySelectorAll("input[type=checkbox]")
     checkbox.forEach((cb) => {
-      cb.addEventListener("change", () => applyFilters(originalArray))
+      cb.addEventListener("change", () =>
+        applyFilters(originalArray, updateFilteredAndRender)
+      );
     })
 
 
@@ -21,6 +27,47 @@ const fetchData = async () => {
     console.error("Error fetching products:", error);
   }
 };
+
+//sorting function
+
+function setupSortEvents() {
+
+  const sortOptions = document.querySelectorAll(".sort-option");
+  const sortContainer = document.querySelector(".sort-right");
+  const sortDropdown = document.querySelector(".sortby-dropdown");
+  sortContainer.addEventListener("click", () => {
+    sortDropdown.style.display =
+      sortDropdown.style.display === "flex" ? "none" : "flex";
+
+    sortOptions.forEach((option) => {
+      option.addEventListener("click", () => {
+        sortOptions.forEach((o) => o.classList.remove("active"));
+        option.classList.add("active");
+  
+        currentSortType = option.getAttribute("data-sort");
+  
+        renderAndSort(currentFilteredArray);
+      });
+    });
+  })
+ 
+}
+
+// rendering after sort
+function renderAndSort(array) {
+  const sortedArray = currentSortType
+    ? sortProducts(array, currentSortType)
+    : array;
+  
+  renderProducts(sortedArray)
+
+}
+
+function updateFilteredAndRender(filteredArray) {
+  currentFilteredArray = filteredArray;
+  renderAndSort(currentFilteredArray);
+}
+
 
 fetchData();
 
@@ -34,16 +81,6 @@ const track = document.getElementById("slider-track");
 
 let min = parseInt(minRange.value);
 let max = parseInt(maxRange.value);
-
-if (max - min < 100) {
-  if (minRange === document.activeElement) {
-    minRange.value = max - 100;
-    min = max - 100;
-  } else {
-    maxRange.value = min + 100;
-    max = min + 100;
-  }
-}
 
 const percentMin = (min / 10100) * 100;
 const percentMax = (max / 10100) * 100;

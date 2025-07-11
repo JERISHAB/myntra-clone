@@ -744,6 +744,45 @@ body {
     margin-left: 66px;
     margin-top: 5px;
 }
+.sortby-dropdown{
+    position: absolute;
+display: none;
+flex-direction: column;
+    width: 255px;
+        background-color: #fff;
+        position: absolute;
+        top: 33px;
+        left: -1px;
+        margin: 0;
+        padding: 16px 0;
+        z-index: 2;
+  
+        border: 1px solid #d4d5d9;
+        border-top: none;
+        -webkit-box-shadow: 0 8px 10px 0 rgba(0, 0, 0, .08);
+        box-shadow: 0 8px 10px 0 rgba(0, 0, 0, .08);
+}
+
+
+
+.sort-option{
+
+    padding: 9px 20px;
+        font-size: 14px;
+        color: #282c3f;
+        cursor: pointer;
+        position: relative;
+        width: 255px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        border-radius: 2px;
+        background-color: #fff;
+}
+
+.sort-option.active{
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
 
 
 /* footer */
