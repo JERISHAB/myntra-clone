@@ -55,6 +55,25 @@ function setupSortEvents() {
  
 }
 
+const mOpenSortBtn = document.getElementById("m-sort-button");
+const mSortModal = document.getElementById("m-sort-modal");
+const mSortOptions = document.querySelectorAll(".m-sort-option");
+
+mOpenSortBtn.addEventListener("click", () => {
+  mSortModal.classList.add("m-show");
+});
+
+mSortOptions.forEach((option) => {
+  option.addEventListener("click", () => {
+    currentSortType = option.getAttribute("data-sort");
+    renderAndSort(currentFilteredArray);
+    mSortModal.classList.remove("m-show");
+  });
+});
+
+
+
+
 // rendering after sort
 function renderAndSort(array) {
   const sortedArray = currentSortType
