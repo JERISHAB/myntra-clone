@@ -1447,6 +1447,104 @@ margin-left: 65px;
     display: none;
 }
 
+ .m-footer {
+     padding: 20px;
+     background-color: #f5f5f6;
+     display:none;
+ }
+
+ .m-footer-section {
+     margin-bottom: 20px;
+ }
+
+ .m-footer-title {
+     font-weight: bold;
+     text-transform: uppercase;
+     font-size: 13px;
+     margin-bottom: 10px;
+     color: #282c3f;
+ }
+
+ .m-footer-links {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 5px 10px;
+ }
+
+ .m-footer-link {
+     color: #535766;
+     font-size: 14px;
+     text-decoration: none;
+     position: relative;
+ }
+
+ .m-footer-link::after {
+     content: '|';
+     margin-left: 10px;
+     color: #ccc;
+ }
+
+ .m-footer-link:last-child::after {
+     content: '';
+ }
+
+ .m-footer-social-icons {
+     display: flex;
+     gap: 16px;
+     align-items: center;
+ }
+
+ .m-footer-social-icons img {
+     width: 24px;
+     height: 24px;
+ }
+
+ .m-footer-bottom {
+     text-align: center;
+     font-size: 13px;
+     color: #696b79;
+     margin-top: 20px;
+ }
+
+
+  .m-price-section {
+    display: none;
+      padding: 20px;
+      background-color: #f5f5f6;
+  }
+
+  .m-price-heading {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 15px;
+  }
+
+  .m-price-table {
+      width: 100%;
+      max-width: 500px;
+      border-collapse: collapse;
+  }
+
+  .m-price-table th {
+      text-align: left;
+      font-weight: bold;
+      font-size: 14px;
+      padding-bottom: 10px;
+      color: #282c3f;
+  }
+
+  .m-price-table td {
+      font-size: 14px;
+      color: #535766;
+      padding: 6px 0;
+      vertical-align: top;
+  }
+
+  .m-price-table td:last-child {
+      text-align: right;
+      white-space: nowrap;
+  }
+
 
 
 
@@ -1456,7 +1554,7 @@ margin-left: 65px;
     .nav-info-section,
     .left-section,
     .top-bar,
-    .footer-top,footer,.pagination-wrapper,
+    .footer-top,.footer-bottom,.pagination-wrapper,
     .rs {
         display: none;
     }
@@ -1465,7 +1563,7 @@ margin-left: 65px;
         display: flex;
     }
 
-    .m-navbar {
+    .m-navbar,.m-footer,  .m-price-section {
         display: block;
     }
 
